@@ -1,0 +1,19 @@
+Dependencies
+============
+
+This layer depends on:
+
+  URI: git://git.openembedded.org/bitbake
+  branch: master
+
+  https://github.com/linux-sunxi/meta-sunxi
+  branch: master
+
+WiFi support
+============
+
+For orange-pi-zero add the following line at the bottom of local.conf:
+IMAGE_INSTALL_append = " xradio-mod "
+
+For orange-pi-pc-plus add the following line at the bottom of local.conf:
+IMAGE_INSTALL_append = "rtl8189fs-mod "

@@ -1,0 +1,14 @@
+diff --git a/Makefile b/Makefile
+index 9553e6e..5eb709a 100644
+--- a/Makefile
++++ b/Makefile
+@@ -1723,6 +1723,9 @@ install:
+ 	install -p -m 644 $(MODULE_NAME).ko  $(MODDESTDIR)
+ 	/sbin/depmod -a ${KVER}
+ 
++modules_install:
++	$(MAKE) ARCH=$(ARCH) CROSS_COMPILE=$(CROSS_COMPILE) -C $(KSRC) M=$(shell pwd)  INSTALL_MOD_PATH=$(INSTALL_MOD_PATH) modules_install
++
+ uninstall:
+ 	rm -f $(MODDESTDIR)/$(MODULE_NAME).ko
+ 	/sbin/depmod -a ${KVER}
