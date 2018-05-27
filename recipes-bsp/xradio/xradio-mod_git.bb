@@ -19,3 +19,7 @@ SRC_URI = "git://github.com/geomatsi/xradio.git;protocol=https"
 S = "${WORKDIR}/git"
 
 EXTRA_OEMAKE += "-C ${STAGING_KERNEL_DIR} M=${S}"
+
+RDEPENDS_${PN} += " \
+	armbian-firmware-xr819 \
+	"
