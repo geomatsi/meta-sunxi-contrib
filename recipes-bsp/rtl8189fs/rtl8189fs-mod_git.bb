@@ -27,3 +27,10 @@ EXTRA_OEMAKE = "KSRC=${STAGING_KERNEL_DIR} \
 		MODDESTDIR=${D}/lib/modules/${KERNEL_VERSION}/kernel/drivers/net/wireless/ \
 		CONFIG_RTL8189FS=m \
 		"
+
+RDEPENDS_${PN} += " \
+	linux-firmware-rtl8192su \
+	linux-firmware-rtl8192ce \
+	linux-firmware-rtl8192cu \
+	linux-firmware-rtl8188 \
+	"
