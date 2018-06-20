@@ -20,16 +20,28 @@ do_compile() {
 do_install () {
 	install -d  ${D}${nonarch_base_libdir}/firmware/
 	install -d  ${D}${nonarch_base_libdir}/firmware/xr819/
+	install -d  ${D}${nonarch_base_libdir}/firmware/brcm/
 	install -m 644 ${S}/xr819/*.bin ${D}${nonarch_base_libdir}/firmware/xr819/
+	install -m 644 ${S}/brcm/*.bin ${D}${nonarch_base_libdir}/firmware/brcm/
+	install -m 644 ${S}/brcm/*.txt ${D}${nonarch_base_libdir}/firmware/brcm/
 }   
-
-PACKAGES =+ "${PN}-xr819" 
 
 FILES_${PN}-xr819 = " \
 	${nonarch_base_libdir}/firmware/xr819/boot_xr819.bin \
 	${nonarch_base_libdir}/firmware/xr819/fw_xr819.bin \
 	${nonarch_base_libdir}/firmware/xr819/sdd_xr819.bin \
 "
+
+PACKAGES =+ "${PN}-xr819"
+RPROVIDES_${PN}-xr819 = "armbian-firmware-xr819"
+
+FILES_${PN}-brcm = " \
+	${nonarch_base_libdir}/firmware/brcm/*bin \
+	${nonarch_base_libdir}/firmware/brcm/*txt \
+"
+
+PACKAGES =+ "${PN}-brcm"
+RPROVIDES_${PN}-brcm = "armbian-firmware-brcm"
 
 # Firmware files are generally not ran on the CPU, so they can be
 # allarch despite being architecture specific
