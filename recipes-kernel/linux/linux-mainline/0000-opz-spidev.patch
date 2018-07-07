@@ -1,0 +1,28 @@
+diff --git a/arch/arm/boot/dts/sun8i-h2-plus-orangepi-zero.dts b/arch/arm/boot/dts/sun8i-h2-plus-orangepi-zero.dts
+index 6713d0f2b3f4..fbf3c95442f8 100644
+--- a/arch/arm/boot/dts/sun8i-h2-plus-orangepi-zero.dts
++++ b/arch/arm/boot/dts/sun8i-h2-plus-orangepi-zero.dts
+@@ -153,7 +153,7 @@
+ 
+ &spi0 {
+ 	/* Disable SPI NOR by default: it optional on Orange Pi Zero boards */
+-	status = "disabled";
++	status = "enabled";
+ 
+ 	flash@0 {
+ 		#address-cells = <1>;
+@@ -196,3 +196,14 @@
+ 	status = "okay";
+ 	usb0_id_det-gpios = <&pio 6 12 GPIO_ACTIVE_HIGH>; /* PG12 */
+ };
++
++/* SPI1: expansion slot */
++&spi1 {
++	status = "okay";
++
++	spidev@0 {
++		compatible = "rohm,dh2228fv";
++		reg = <0>;
++		spi-max-frequency = <10000000>;
++	};
++};
