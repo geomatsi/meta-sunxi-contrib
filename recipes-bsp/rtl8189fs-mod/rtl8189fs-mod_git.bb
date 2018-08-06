@@ -10,7 +10,7 @@ PR = "r0"
 SRC_URI = "git://github.com/jwrdegoede/rtl8189ES_linux.git;protocol=https;branch=rtl8189fs \
 	   file://0000-modules-install.patch \
 	   "
-SRCREV = "569bdb91f2cc76e2f5b77df42471db2a62fd2376"
+SRCREV = "cddb07311ec03157643c44154498c9f2268fc431"
 
 S = "${WORKDIR}/git"
 
