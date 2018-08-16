@@ -22,3 +22,7 @@ do_shared_workdir_append () {
 	cp scripts/basic/fixdep $kerneldir/scripts/basic/fixdep
 	cp scripts/mod/modpost $kerneldir/scripts/mod/modpost
 }
+
+do_kernel_configme[depends] += "virtual/${TARGET_PREFIX}binutils:do_populate_sysroot"
+do_kernel_configme[depends] += "virtual/${TARGET_PREFIX}gcc:do_populate_sysroot"
+do_kernel_configme[depends] += "bc-native:do_populate_sysroot bison-native:do_populate_sysroot"
