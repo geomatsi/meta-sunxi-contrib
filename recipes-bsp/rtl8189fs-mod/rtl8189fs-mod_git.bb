@@ -9,6 +9,7 @@ PR = "r0"
 
 SRC_URI = "git://github.com/jwrdegoede/rtl8189ES_linux.git;protocol=https;branch=rtl8189fs \
 	   file://0000-modules-install.patch \
+           file://0001-enable-monitor-mode.patch \
 	   "
 SRCREV = "cddb07311ec03157643c44154498c9f2268fc431"
 
