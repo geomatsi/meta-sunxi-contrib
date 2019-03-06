@@ -14,7 +14,7 @@ SRCREV = "cddb07311ec03157643c44154498c9f2268fc431"
 
 S = "${WORKDIR}/git"
 
-COMPATIBLE_MACHINE = "orange-pi-pc-plus|orange-pi-zero"
+COMPATIBLE_MACHINE = "orange-pi-pc-plus|orange-pi-zero|orangepi-plus2e"
 
 EXTRA_OEMAKE = "KSRC=${STAGING_KERNEL_DIR} \
 		KVER=${KERNEL_VERSION} \
