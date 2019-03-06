@@ -1,0 +1,12 @@
+diff -ur git.org/Makefile git/Makefile
+--- git.org/Makefile	2019-03-05 13:33:57.563776906 +0000
++++ git/Makefile	2019-03-05 15:49:01.678369357 +0000
+@@ -72,7 +72,7 @@
+ CONFIG_BR_EXT = y
+ CONFIG_ANTENNA_DIVERSITY = n
+ CONFIG_TDLS = n
+-CONFIG_WIFI_MONITOR = n
++CONFIG_WIFI_MONITOR = y
+ ######################## Wake On Lan ##########################
+ CONFIG_WOWLAN = n
+ CONFIG_GPIO_WAKEUP = n
